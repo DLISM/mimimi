@@ -1,0 +1,20 @@
+spring:
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mimimimetr
+    username: postgres
+    password: postgres
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+
+  flyway:
+    baselineOnMigrate: true
+    validateOnMigrate: false
+    locations: classpath:db/migration
+
+files:
+  upload: uploads/
+  link: /static/uploads/

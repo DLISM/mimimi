@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{template-parts/head :: head}">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div th:replace="~{template-parts/menu :: menu}"></div>
+        <div th:if="${message}" th:text="${message}" class="alert alert-secondary mt-2"></div>
+    </div>
+    <h1>Добавить свою кошку</h1>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form th:action="@{/add}" th:method="POST" th:object="${addForm}" enctype="multipart/form-data">
+                <input th:field="*{name}" placeholder="Имя" class="form-control mt-2">
+                <input class="form-control mt-2" th:field="*{file}" id="exampleInputFile" type="file" multiple>
+                <button class="btn-primary btn mt-2">Добавить</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
