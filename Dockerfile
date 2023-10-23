@@ -7,5 +7,6 @@ RUN mvn clean package
 FROM openjdk:17-jdk-slim
 WORKDIR /
 COPY --from=build /target/*.jar mimimi.jar
+COPY /uploads uploads
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "mimimi.jar"]
