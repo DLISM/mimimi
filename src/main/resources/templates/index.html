@@ -9,7 +9,7 @@
         <div th:if="${message}" th:text="${message}" class="alert alert-secondary mt-2"></div>
     </div>
     <div class="row" th:if="${pair}">
-        <h1>Главная страница</h1>
+        <h1 class="mt-2 text-center">Выбери своего котика</h1>
         <div class="col-sm-12 col-md-6 d-flex flex-column justify-content-start align-items-center overflow-hidden">
             <h4 th:text="${pair.getCatOne().getName()}"></h4>
             <img th:src="${pair.getCatOne().getPhoto()}" class="w-auto h-100" style="max-height: 400px">
